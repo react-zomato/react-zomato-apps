@@ -1,3 +1,8 @@
+import Swal from 'sweetalert2'
+
+
+
+
 const LOG_IN = 'LOGIN';
 const GET_USER_LOGIN = 'GET_USER_LOGIN';
 
@@ -20,15 +25,31 @@ const login = (formData, history) => async (dispatch) =>{
     })
     if(checkUser.length > 0){
         if(checkUser[0].passWord !== formData.passWord){
-            alert('email atau password anda salah')
+            Swal.fire({
+                title: 'Password atau Email anda salah',
+                text: '',
+                icon: 'error',
+                confirmButtonText: 'Cool'
+              })
         }
         else{
             dispatch(getUserLogin(checkUser[0]));
-            alert('selamat datang' + checkUser[0].fullName)
-            history.push('/restaurant')
+            Swal.fire({
+                title: `Selamat Datang ${checkUser[0].fullName}`,
+                text: '',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              });
+              history.push('/restaurant')
         }
     }else{
-        alert('email anda tidak terdaftar');
+        Swal.fire({
+            title: 'Email anda tidak terdaftar',
+            text: '',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          })
+          history.push('/register')
     }
     
 }
@@ -47,7 +68,12 @@ const registerUser = (formData, history) => async (dispatch) => {
     await response.json();
 
     if(response.status === 201){
-        alert('selamat anda telah terdaftar');
+        Swal.fire({
+            title: 'Selamat anda telah terdaftar',
+            text: '',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          });
         history.push('/login')
     }
 }

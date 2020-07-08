@@ -22,7 +22,8 @@ const eventHandler = (event) =>{
 
     return (
         <div>
-            <form onSubmit={submitHandler}>
+            <h1>Sign Up</h1>
+            <form className='container1' onSubmit={submitHandler}>
             <div>
                 <input onChange={eventHandler} 
                 type="text" value={form.fullName} name="fullName" id="fullName"/>

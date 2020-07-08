@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { login } from "../../Redux/Actions";
 import { useHistory } from "react-router-dom";
+import './Login.css'
 
 function Login (props) {
     const history = useHistory();
@@ -18,7 +19,8 @@ function Login (props) {
 
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <h1>Sign Up</h1>
+            <form onSubmit={handleSubmit} className='container1'>
                 <div>
                     <input onChange={inputHandler} type="email" name="email" id="email"/>
                     <label htmlFor="email">Email</label>
