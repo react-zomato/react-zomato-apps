@@ -10,6 +10,7 @@ import {
     CardImg,
 } from "reactstrap";
 import Header from "../../components/header/Header";
+import { Link } from "react-router-dom";
 import { fetchRestaurant } from "../../redux/actions";
 import { connect } from "react-redux";
 
@@ -36,62 +37,72 @@ function Restaurant(props) {
                                     justifyContent: "center",
                                 }}
                             >
-                                <CardDeck>
-                                    <Card>
-                                        <CardImg
-                                            top
-                                            width="150%"
-                                            height="250px"
-                                            src={
-                                                restaurant.restaurant
-                                                    .featured_image
-                                            }
-                                            alt="Card image cap"
-                                        />
-                                        <CardBody>
-                                            <CardText
-                                                style={{
-                                                    fontSize: 20,
-                                                    fontWeight: "bold",
-                                                }}
-                                            >
-                                                {restaurant.restaurant.name}
-                                            </CardText>
-                                            <CardText className="text-muted">
-                                                {
+                                <Link
+                                    to={`/restaurant/${restaurant.restaurant.id}`}
+                                >
+                                    <CardDeck>
+                                        <Card>
+                                            <CardImg
+                                                top
+                                                width="150%"
+                                                height="250px"
+                                                src={
                                                     restaurant.restaurant
-                                                        .location.address
+                                                        .featured_image
                                                 }
-                                            </CardText>
-                                            <hr />
-                                            <CardText className="text-muted">
-                                                Masakan:{" "}
-                                                {restaurant.restaurant.cuisines}
-                                            </CardText>
+                                                alt="Card image cap"
+                                            />
+                                            <CardBody>
+                                                <CardText
+                                                    style={{
+                                                        fontSize: 20,
+                                                        fontWeight: "bold",
+                                                    }}
+                                                >
+                                                    {restaurant.restaurant.name}
+                                                </CardText>
+                                                <CardText className="text-muted">
+                                                    {
+                                                        restaurant.restaurant
+                                                            .location.address
+                                                    }
+                                                </CardText>
+                                                <hr />
+                                                <CardText className="text-muted">
+                                                    Masakan:{" "}
+                                                    {
+                                                        restaurant.restaurant
+                                                            .cuisines
+                                                    }
+                                                </CardText>
 
-                                            <CardText className="text-muted">
-                                                Harga untuk 2 orang:{" "}
-                                                {
-                                                    restaurant.restaurant
-                                                        .average_cost_for_two
-                                                }
-                                            </CardText>
+                                                <CardText className="text-muted">
+                                                    Harga untuk 2 orang:{" "}
+                                                    {
+                                                        restaurant.restaurant
+                                                            .average_cost_for_two
+                                                    }
+                                                </CardText>
 
-                                            <CardText className="text-muted">
-                                                Jam:{" "}
-                                                {restaurant.restaurant.timings}
-                                            </CardText>
+                                                <CardText className="text-muted">
+                                                    Jam:{" "}
+                                                    {
+                                                        restaurant.restaurant
+                                                            .timings
+                                                    }
+                                                </CardText>
 
-                                            <CardText className="text-muted">
-                                                Telepon:{" "}
-                                                {
-                                                    restaurant.restaurant
-                                                        .phone_numbers
-                                                }
-                                            </CardText>
-                                        </CardBody>
-                                    </Card>
-                                </CardDeck>
+                                                <CardText className="text-muted">
+                                                    Telepon:{" "}
+                                                    {
+                                                        restaurant.restaurant
+                                                            .phone_numbers
+                                                    }
+                                                </CardText>
+                                            </CardBody>
+                                        </Card>
+                                    </CardDeck>
+                                </Link>
                             </Col>
                         );
                     })}
