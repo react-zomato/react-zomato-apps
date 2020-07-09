@@ -1,21 +1,19 @@
 import React from "react";
-
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { DetailsRestaurants } from "./pages";
 import { Provider } from "react-redux";
-import reducers from "./redux/reducers";
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import logger from "redux-logger";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import RestaurantDetail from "./components/pages/detailrestaurants/RestaurantDetail";
+
+import store from "./components/redux/store";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
     return (
-        <Provider store={createStore(reducers, applyMiddleware(logger, thunk))}>
+        <Provider store={store}>
             <Router>
                 <Switch>
-                    <Route exact path="/restaurant">
-                        <DetailsRestaurants />
+                    <Route exact path="/restaurants/:id">
+                        <RestaurantDetail />
                     </Route>
                 </Switch>
             </Router>
