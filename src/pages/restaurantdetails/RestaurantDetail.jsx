@@ -35,6 +35,8 @@ function RestaurantDetail() {
                     display: "flex",
                     justifyContent: "center",
                     marginTop: "5px",
+                    marginRight: "5px",
+                    marginLeft: "5px",
                 }}
             >
                 <Card>
