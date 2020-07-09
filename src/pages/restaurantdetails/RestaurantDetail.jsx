@@ -39,7 +39,7 @@ function RestaurantDetail() {
             >
                 <Card>
                     <CardImg
-                        style={{ width: "700px" }}
+                        style={{ maxWidth: "700px" }}
                         top
                         width="100%"
                         src={restaurantDetails.featured_image}
