@@ -21,13 +21,13 @@ export default function Header() {
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="mr-auto" navbar>
                     <NavItem>
-                        <NavLink tag={Link} to="/restaurant">
-                            Restaurant
+                        <NavLink tag={Link} to="/">
+                            Register
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink tag={Link} to="/">
-                            Logout
+                        <NavLink tag={Link} to="/login">
+                            Login
                         </NavLink>
                     </NavItem>
                 </Nav>

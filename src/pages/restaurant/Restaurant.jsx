@@ -9,6 +9,7 @@ import {
     CardText,
     CardImg,
 } from "reactstrap";
+import Header from "../../components/header/Header";
 import { fetchRestaurant } from "../../redux/actions";
 import { connect } from "react-redux";
 
@@ -20,6 +21,7 @@ function Restaurant(props) {
     }, []);
     return (
         <Container fluid={true}>
+            <Header />
             <Row xs="1" sm="2" md="4">
                 {props.restaurant.restaurants !== undefined &&
                     props.restaurant.restaurants.map((restaurant) => {
