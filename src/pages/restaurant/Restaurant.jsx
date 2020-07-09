@@ -38,7 +38,7 @@ function Restaurant(props) {
                                 }}
                             >
                                 <Link
-                                    to={`/restaurant/${restaurant.restaurant.id}`}
+                                    to={`restaurant/${restaurant.restaurant.id}`}
                                 >
                                     <CardDeck>
                                         <Card>

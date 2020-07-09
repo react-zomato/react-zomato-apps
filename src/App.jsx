@@ -1,7 +1,7 @@
 import React from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Restaurant, Login, Register } from "./pages";
+import { Restaurant, Login, Register, RestaurantDetail } from "./pages";
 import { PrivateRoute } from "./components";
 import { Provider } from "react-redux";
 import reducers from "./redux/reducers";
@@ -26,6 +26,9 @@ function App() {
                     <PrivateRoute exact path="/restaurant">
                         <Restaurant />
                     </PrivateRoute>
+                    <Route exact path="/restaurant/:id">
+                        <RestaurantDetail />
+                    </Route>
                 </Switch>
             </Router>
         </Provider>
