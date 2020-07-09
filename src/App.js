@@ -1,7 +1,7 @@
 import React from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Restaurant } from "./pages";
+import { DetailsRestaurants } from "./pages";
 import { Provider } from "react-redux";
 import reducers from "./redux/reducers";
 import { createStore, applyMiddleware } from "redux";
@@ -15,7 +15,7 @@ function App() {
             <Router>
                 <Switch>
                     <Route exact path="/restaurant">
-                        <Restaurant />
+                        <DetailsRestaurants />
                     </Route>
                 </Switch>
             </Router>

@@ -1,27 +1,27 @@
-const GET_RESTAURANT = "GET_RESTAURANT";
+const GET_DETAIL_RESTAURANTS = "GET_DETAIL_RESTAURANTS";
 
-const getRestaurant = (datas) => {
+const getRestaurants = (datas) => {
     return {
-        type: GET_RESTAURANT,
+        type: GET_DETAIL_RESTAURANTS,
         datas,
     };
 };
 
-const fetchRestaurant = () => async (dispatch) => {
+const fetchRestaurants = () => async (dispatch) => {
     const url =
         "https://developers.zomato.com/api/v2.1/search?entity_id=74&entity_type=city";
     const option = {
         method: "GET",
         headers: {
             "content-type": "application/json",
-            "user-key": "96f05ef350bcc95320fa427793a93db3",
+            "user-key": "c42adbcf162ea10973e7265d35f8cf8e",
         },
     };
 
     const response = await fetch(url, option);
     const result = await response.json();
 
-    dispatch(getRestaurant(result));
+    dispatch(getRestaurants(result));
 };
 
-export { GET_RESTAURANT, getRestaurant, fetchRestaurant };
+export { GET_DETAIL_RESTAURANTS, getRestaurants, fetchRestaurants };
